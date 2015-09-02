@@ -6,6 +6,9 @@ mapEach f g (a, b) = (f a, g b)
 mapBoth : (a -> a') -> (a, a) -> (a', a')
 mapBoth f = mapEach f f
 
+map : (a -> a') -> (a, a) -> (a', a')
+map = mapBoth
+
 mapLeft : (a -> a') -> (a, b) -> (a', b)
 mapLeft f = mapEach f identity
 
